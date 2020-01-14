@@ -68,6 +68,7 @@ __END__
 <head>
   <meta charset="utf-8">
   <script src="https://code.highcharts.com/highcharts.js"></script>
+  <title>ruby ticket count chart</title>
 </head>
 <body>
 <div id="container"></div>
