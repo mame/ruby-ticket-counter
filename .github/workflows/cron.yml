@@ -19,13 +19,9 @@ jobs:
       - run: ruby ruby-ticket-counter.rb
       - run: git checkout gh-pages
       - run: mv index.html.tmp index.html
-      - name: Update the github pages
-        run: |
-          git config --global user.name "mame"
-          git config --global user.email "mame@ruby-lang.org"
-          git remote set-url origin https://mame:${DEPLOY_TOKEN}@github.com/mame/ruby-ticket-counter.git
-          if git commit -a -m 'Update the github pages'; then
-            git push origin HEAD
-          fi
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2
         env:
-          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          PERSONAL_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: .
