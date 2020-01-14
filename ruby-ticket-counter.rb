@@ -71,7 +71,7 @@ __END__
   <title>Ruby ticket count chart</title>
 </head>
 <body>
-<h1>Ruby ticket count chart</title>
+<h1>Ruby ticket count chart</h1>
 <p><a href="https://bugs.ruby-lang.org/">https://bugs.ruby-lang.org/</a></p>
 <p><a href="https://github.com/mame/ruby-ticket-counter">https://github.com/mame/ruby-ticket-counter</a></p>
 <div id="container"></div>
