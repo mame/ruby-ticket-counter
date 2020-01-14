@@ -1,0 +1,29 @@
+name: cron
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *' # every ten minutes
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-ruby@v1
+      - run: git checkout master
+      - run: ruby ruby-ticket-counter.rb
+      - run: git checkout gh-pages
+      - run: mv index.html.tmp index.html
+      - name: Update the github pages
+        run: |
+          git config --global user.name "mame"
+          git config --global user.email "mame@ruby-lang.org"
+          git remote set-url origin https://mame:${GITHUB_TOKEN}@github.com/ruby/rubyci-alerts.git
+          if git commit -a -m 'Update the github pages'; then
+            git push origin HEAD
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
