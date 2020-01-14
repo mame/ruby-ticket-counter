@@ -72,7 +72,8 @@ __END__
 </head>
 <body>
 <h1>ruby ticket count chart</title>
-<a href="https://bugs.ruby-lang.org/">https://bugs.ruby-lang.org/</a>
+<p><a href="https://bugs.ruby-lang.org/">https://bugs.ruby-lang.org/</a></p>
+<p><a href="https://github.com/mame/ruby-ticket-counter">https://github.com/mame/ruby-ticket-counter</a></p>
 <div id="container"></div>
 <script type="text/javascript">
 document.body.onload = function() {
