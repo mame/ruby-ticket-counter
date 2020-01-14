@@ -71,6 +71,8 @@ __END__
   <title>ruby ticket count chart</title>
 </head>
 <body>
+<h1>ruby ticket count chart</title>
+<a href="https://bugs.ruby-lang.org/">https://bugs.ruby-lang.org/</a>
 <div id="container"></div>
 <script type="text/javascript">
 document.body.onload = function() {
