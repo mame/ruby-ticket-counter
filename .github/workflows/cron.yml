@@ -23,7 +23,7 @@ jobs:
         run: |
           git config --global user.name "mame"
           git config --global user.email "mame@ruby-lang.org"
-          git remote set-url origin https://mame:${GITHUB_TOKEN}@github.com/ruby/rubyci-alerts.git
+          git remote set-url origin https://mame:${GITHUB_TOKEN}@github.com/mame/ruby-ticket-counter.git
           if git commit -a -m 'Update the github pages'; then
             git push origin HEAD
           fi
