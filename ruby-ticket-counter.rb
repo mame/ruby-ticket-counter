@@ -57,6 +57,7 @@ events.each do |tracker, time, diff|
 end
 
 html = DATA.read
+html = html.sub("LAST_UPDATE") { Time.now.strftime("%F %T") }
 html = html.sub("BUG_DATA") { JSON.generate(bug_data) }
 html = html.sub("FEATURE_DATA") { JSON.generate(feature_data) }
 
@@ -72,6 +73,7 @@ __END__
 </head>
 <body>
 <h1>Ruby ticket count chart</h1>
+<p>last update: LAST_UPDATE</p>
 <p><a href="https://bugs.ruby-lang.org/">https://bugs.ruby-lang.org/</a></p>
 <p><a href="https://github.com/mame/ruby-ticket-counter">https://github.com/mame/ruby-ticket-counter</a></p>
 <div id="container"></div>
